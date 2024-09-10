@@ -1,7 +1,7 @@
 # Module 3 - Kubernetes Troubleshooting
 |User|Password|
 |---|---|
-|lab||
+|lab|f5Appw0rld!|
 
 ## Explain Command
 kubectl explain \<resource>
