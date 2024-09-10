@@ -10,13 +10,13 @@
 ```
 cd lab1
 ```
-The full path sould be `/home/ubuntu/nginx-api-gateway-for-k8s/task_01`
+  The full path sould be `/home/ubuntu/nginx-api-gateway-for-k8s/task_01`
 
 2. Edit DockerFile
 ```
 vim Dockerfile
 ```
-To enter interactive mode press i. You should now see INSERT in the bottom left of your web shell. Copy-Paste following code
+  To enter interactive mode press i. You should now see INSERT in the bottom left of your web shell. Copy-Paste following code
 
 <details>
 <summary>DockerFile</summary>
@@ -35,15 +35,15 @@ To close and save the file, press the escape (ESC) key to quit interactive mode.
 
 3. Build, tag and run the new container
 
-Podman Build
+- Podman Build
 ```
 podman build -t appworld:v1 .
 ```
-List Image
+- List Image
 ```
 podman images
 ```
-Run Container
+- Run Container
 ```
 podman run -p 83:83 --name app -dit appworld:v1
 ```
@@ -54,22 +54,25 @@ podman run -p 83:83 --name app -dit appworld:v1
 
 4. Show and test new container
 
-a. Show Container
+- Show Container
 ```
 podman ps -a
 ```
-b. Curl Container
+- Curl Container
 ```
 curl http://localhost:83
 ```
 
-c. Container logs
+- Container logs
 
 ```
 podman logs app
 ```
+
 <details>
 <summary>Logs</summary>
+<html>
+<body>
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
@@ -89,4 +92,6 @@ podman logs app
 2023/12/30 21:08:02 [notice] 1#1: start worker process 17
 2023/12/30 21:08:02 [notice] 1#1: start worker process 18
 10.88.0.1 - - [30/Dec/2023:21:08:20 +0000] "GET / HTTP/1.1" 200 117 "-" "curl/7.68.0" "-"
+</body>
+</html>
 </details>
