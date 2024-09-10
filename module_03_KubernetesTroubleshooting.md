@@ -3,6 +3,21 @@
 |---|---|
 |lab|f5Appw0rld!|
 
+## Access Jumphost if Disconnect
+
+- Connect to Jumphost then open Webshell
+<img width="1000" alt="VSwithPolicy" src="https://github.com/bsamodro/ContainerAndKubernetes/blob/25149847079af251784e5fe6808f3ef1e043335c/images/jumphost_webshell2.png">
+
+- From the web shell you will ssh into the leader node:
+```
+ssh lab@10.1.1.5
+```
+
+- Password
+```
+f5Appw0rld!
+```
+
 ## Explain Command
 kubectl explain \<resource>
 
