@@ -54,3 +54,44 @@ kubectl describe pod testpod -n test
 ```
 kubectl create deployment lab-deploy --image=nginx:1.22 --replicas=3 -n test
 ```
+- Deployment Output
+```
+kubectl get deploy lab-deploy -n test
+```
+- Describe Deployment
+```
+kubectl describe deploy lab-deploy -n test
+```
+- Delete Deployment
+```
+kubectl delete deploy lab-deploy -n test
+```
+- Deployment Manifest
+```
+kubectl create deployment lab-deploy --image=nginx:1.22 --replicas=3 -n test --dry-run=client -o yaml > lab-deploy.yaml
+```
+- Deployment
+```
+kubectl apply -f lab-deploy.yaml
+```
+- Scale
+```
+kubectl scale --replicas=5 deploy/lab-deploy -n test
+```
+- Describe Deployment
+```
+kubectl describe deploy/lab-deploy -n test
+```
+
+## Operation Service
+- Service
+```
+kubectl expose deployment lab-deploy --type=NodePort --port=80 --target-port=80 --name=lab-deploy-svc --selector=app=lab-deploy -n test
+```
+- Describe Service
+```
+kubectl describe service lab-deploy-svc -n test
+```
+- Test using curl
+
+curl http://10.1.1.6:<node port>
