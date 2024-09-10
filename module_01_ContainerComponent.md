@@ -58,6 +58,10 @@ podman run -p 83:83 --name app -dit appworld:v1
 ```
 podman ps -a
 ```
+- Untruncated
+```
+podman ps --no-trunc
+```
 - Curl Container
 ```
 curl http://localhost:83
