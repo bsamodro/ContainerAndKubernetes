@@ -1,8 +1,22 @@
 # Module 2 Kubernetes Operation
 |User|Password|
 |---|---|
-|lab||
+|lab|f5Appw0rld!|
 
+## Access Jumphost if Disconnect
+
+1. Connect to Jumphost then open Webshell
+<img width="1000" alt="VSwithPolicy" src="https://github.com/bsamodro/ContainerAndKubernetes/blob/25149847079af251784e5fe6808f3ef1e043335c/images/jumphost_webshell2.png">
+
+2. From the web shell you will ssh into the leader node:
+```
+ssh lab@10.1.1.5
+```
+
+- Password
+```
+f5Appw0rld!
+```
 
 ## Operation Pod
 
@@ -92,6 +106,7 @@ kubectl expose deployment lab-deploy --type=NodePort --port=80 --target-port=80 
 ```
 kubectl describe service lab-deploy-svc -n test
 ```
-- Test using curl
-
-curl http://10.1.1.6: \<Node Port>
+- Test using curl . Node Port should be changed to corrected port refer to Above Command
+```
+curl http://10.1.1.6:<Node Port>
+```
