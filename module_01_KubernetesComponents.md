@@ -2,10 +2,9 @@
 # Module 1 - Kubernetes Components
 |User|Password|
 |---|---|
-|lab||
+|lab|f5Appw0rld!|
 
-
-## Node
+## Access Jumphost
 
 1. Connect to Jumphost then open Webshell
 
@@ -19,6 +18,9 @@ ssh lab@10.1.1.5
 ```
 f5Appw0rld!
 ```
+
+## Node
+
 - Get node info
 ```
 kubectl get nodes
@@ -57,8 +59,56 @@ kubectl describe ns kube-system
 ```
 
 - default
+```
+kubectl get all,crd
+```
+- kube-system
+```
+kubectl get all -n kube-system
+```
 
+## Pod
+- Describe CoreDNS (replace core dns pod with pod from above command)
+```
+kubectl describe pod <coredns pod> -n kube-system
+```
+- BusyBox
+```
+kubectl create namespace test
+```
+```
+kubectl run bbox --image=docker.io/busybox -n test
+```
+- Get Pods
+```
+kubectl get pod -n test
+```
+You may not yet see a Completed status and instead see CrashLoopBackOff (clbo) status
 
+- Sleep BusyBox
+```
+kubectl delete pod bbox -n test
+```
+```
+kubectl run bbox -n test --image=docker.io/busybox -- /bin/sh -c 'sleep 35'
+```
+```
+watch kubectl get pod -n test
+```
+
+## Deployment
+
+- Deployments
+```
+kubectl get deployments -n kube-system
+```
+
+## Service
+
+- Services
+```
+kubectl get services -n kube-system
+```
 
 
 
