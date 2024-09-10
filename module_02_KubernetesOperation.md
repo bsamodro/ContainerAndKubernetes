@@ -1,4 +1,4 @@
-# Module 2 Kubernetes Operation
+# Module 2 - Kubernetes Operation
 |User|Password|
 |---|---|
 |lab|f5Appw0rld!|
