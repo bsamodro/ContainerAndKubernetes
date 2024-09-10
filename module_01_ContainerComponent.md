@@ -3,16 +3,20 @@
 |---|---|
 |lab|f5Appw0rld!|
 
+## Access Jumphost
+
+1. Connect to Jumphost then open Webshell
+<img width="1000" alt="VSwithPolicy" src="https://github.com/bsamodro/ContainerAndKubernetes/blob/25149847079af251784e5fe6808f3ef1e043335c/images/jumphost_webshell2.png">
 
 ## Container
 
-1. Go to Working Directory
+2. Go to Working Directory
 ```
 cd lab1
 ```
-  The full path sould be `/home/ubuntu/nginx-api-gateway-for-k8s/task_01`
+  The full path sould be `/lab1`
 
-2. Edit DockerFile
+3. Edit DockerFile
 ```
 vim Dockerfile
 ```
@@ -33,7 +37,7 @@ EXPOSE 83/tcp
 
 To close and save the file, press the escape (ESC) key to quit interactive mode. Press the : (colon) key to bring up the vim prompt, then issue the write and quite command: wq. You can exit vim without saving changes by pressing : (colon) and issuing the quit forcefully command: q!
 
-3. Build, tag and run the new container
+4. Build, tag and run the new container
 
 - Podman Build
 ```
@@ -48,7 +52,7 @@ podman images
 podman run -p 83:83 --name app -dit appworld:v1
 ```
 
-4. Show and test new container
+5. Show and test new container
 
 - Show Container
 ```
