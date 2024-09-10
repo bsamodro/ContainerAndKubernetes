@@ -94,4 +94,4 @@ kubectl describe service lab-deploy-svc -n test
 ```
 - Test using curl
 
-curl http://10.1.1.6:<node port>
+curl http://10.1.1.6: \<Node Port>
