@@ -95,6 +95,8 @@ kubectl run bbox -n test --image=docker.io/busybox -- /bin/sh -c 'sleep 35'
 ```
 watch kubectl get pod -n test
 ```
+To exit the watch command, use the shell escape Control + C
+
 
 ## Deployment
 
